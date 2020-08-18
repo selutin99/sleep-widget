@@ -25,6 +25,7 @@
                        android:resource="@xml/widget">
             </meta-data>
         </receiver>
+
     </application>
 
 </manifest>
