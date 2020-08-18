@@ -5,12 +5,16 @@ import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.content.Intent;
 
+import com.galua.sleepwidget.service.ModeChanger;
+import com.galua.sleepwidget.service.impl.ModeChangerImpl;
+
 public class Widget extends AppWidgetProvider {
 
     private static final String SYNC_CLICKED = "WidgetImageClick";
     private static boolean IS_SLEEPING_MODE = false;
 
     private final PresentorUtils presentorUtils = new PresentorUtils();
+    private final ModeChanger service = new ModeChangerImpl();
 
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
@@ -36,6 +40,8 @@ public class Widget extends AppWidgetProvider {
 
     private void invokeLogic(Context context) {
         presentorUtils.configurePresentor(context);
+
+        service.updateMode(context, IS_SLEEPING_MODE);
 
         presentorUtils.getRemoteViews().setImageViewResource(R.id.imageView, presentorUtils.setImage(IS_SLEEPING_MODE));
         IS_SLEEPING_MODE = !IS_SLEEPING_MODE;
