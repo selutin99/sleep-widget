@@ -1,20 +1,14 @@
 package com.galua.sleepwidget;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-
-import android.Manifest;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 
-public class MainActivity extends AppCompatActivity
-        implements ActivityCompat.OnRequestPermissionsResultCallback {
+import androidx.appcompat.app.AppCompatActivity;
 
-    private static final int REQUEST_WRITE_PERMISSION = 1001;
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
