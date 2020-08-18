@@ -1,12 +1,13 @@
 package com.galua.sleepwidget;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.provider.Settings;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.galua.sleepwidget.service.impl.Constants;
+import com.nabinbhandari.android.permissions.PermissionHandler;
+import com.nabinbhandari.android.permissions.Permissions;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,12 +18,20 @@ public class MainActivity extends AppCompatActivity {
         requestPermission();
     }
 
+
     private void requestPermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (!Settings.System.canWrite(getApplicationContext())) {
-                Intent intent = new Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS, Uri.parse("package:" + getPackageName()));
-                startActivityForResult(intent, 200);
-            }
+            Permissions.check(
+                this,
+                Constants.PERMISSIONS_LIST.toArray(new String[0]),
+                Constants.PERMISSIONS_RATIONALE,
+                Constants.PERMISSIONS_OPTIONS,
+                new PermissionHandler() {
+                    @Override
+                    public void onGranted() {
+                    }
+                }
+            );
         }
     }
 }
