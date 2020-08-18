@@ -4,6 +4,6 @@
     android:minWidth="40dp"
     android:minHeight="40dp"
     android:resizeMode="horizontal|vertical"
-    android:previewImage="@drawable/">
+    android:previewImage="@drawable/night">
 
 </appwidget-provider>
