@@ -19,13 +19,24 @@ public class Widget extends AppWidgetProvider {
         presentorUtils.configurePresentor(context);
 
         presentorUtils.getRemoteViews().setImageViewResource(R.id.imageView, presentorUtils.setImage(IS_SLEEPING_MODE));
+        IS_SLEEPING_MODE = !IS_SLEEPING_MODE;
         presentorUtils.getRemoteViews().setOnClickPendingIntent(R.id.imageView, presentorUtils.getPendingSelfIntent(context, SYNC_CLICKED));
-
+        appWidgetManager.updateAppWidget(presentorUtils.getComponentName(), presentorUtils.getRemoteViews());
     }
 
     @Override
     public void onReceive(Context context, Intent intent) {
         super.onReceive(context, intent);
+
+        if (SYNC_CLICKED.equals(intent.getAction())) {
+            AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
+
+            presentorUtils.configurePresentor(context);
+            presentorUtils.getRemoteViews().setImageViewResource(R.id.imageView, presentorUtils.setImage(IS_SLEEPING_MODE));
+            IS_SLEEPING_MODE = !IS_SLEEPING_MODE;
+
+            appWidgetManager.updateAppWidget(presentorUtils.getComponentName(), presentorUtils.getRemoteViews());
+        }
     }
 
 }
