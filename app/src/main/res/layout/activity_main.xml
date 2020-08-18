@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/main_activity_author"
-        android:textColor="@color/customColorPrimaryDark"
+        android:textColor="@color/customColorAccent"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -36,18 +36,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
+        android:layout_marginLeft="60dp"
         android:layout_marginTop="40dp"
-        android:layout_marginLeft="90dp"
-        android:layout_marginRight="90dp"
+        android:layout_marginRight="60dp"
 
         android:text="@string/main_activity_app_description"
-        android:textColor="@color/customColorPrimaryDark"
-        android:textSize="18sp"
         android:textAlignment="center"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
 </LinearLayout>
