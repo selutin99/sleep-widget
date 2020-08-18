@@ -1,4 +1,4 @@
-package com.galua.sleepwidget.service.impl;
+package com.galua.sleepwidget;
 
 import android.Manifest;
 

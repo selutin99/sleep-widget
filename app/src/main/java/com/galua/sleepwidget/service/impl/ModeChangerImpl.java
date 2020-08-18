@@ -3,6 +3,7 @@ package com.galua.sleepwidget.service.impl;
 import android.content.Context;
 import android.media.AudioManager;
 
+import com.galua.sleepwidget.Constants;
 import com.galua.sleepwidget.service.ModeChanger;
 
 public class ModeChangerImpl implements ModeChanger {
