@@ -11,7 +11,7 @@ import com.galua.sleepwidget.service.impl.ModeChangerImpl;
 public class Widget extends AppWidgetProvider {
 
     private static final String SYNC_CLICKED = "WidgetImageClick";
-    private static boolean IS_SLEEPING_MODE = false;
+    private static boolean IS_SLEEPING_MODE = true;
 
     private final PresentorUtils presentorUtils = new PresentorUtils();
     private final ModeChanger service = new ModeChangerImpl();

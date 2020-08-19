@@ -4,10 +4,10 @@
     android:minWidth="40dp"
     android:minHeight="40dp"
     android:resizeMode="horizontal|vertical"
-    android:previewImage="@drawable/night"
+    android:previewImage="@drawable/day"
     android:widgetCategory="home_screen"
     android:initialLayout="@layout/widget"
-    android:updatePeriodMillis="7200000">
+    android:updatePeriodMillis="720000000">
 
 
 </appwidget-provider>
